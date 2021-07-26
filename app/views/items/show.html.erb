@@ -31,6 +31,7 @@
 <% if @item.user.present? %>
 <div class="editor">
   <%= link_to 'Edit Item', edit_item_path(@item) %>
+  <%= link_to 'Delete Item', @item, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
 </div>
 <% end %>
 
@@ -40,7 +41,7 @@
   <p>coming soon</p>
 </div>
 
-<%= link_to 'Add to bag' %>
+<%= link_to 'Add to bag',line_items_path(:item => @item.id) %>
 <%= link_to '✉️ Ask seller a question' %>
 <%= link_to '❤️ Add to wishlist ' %>
 </div>
