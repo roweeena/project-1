@@ -1,0 +1,15 @@
+<% if @current_user.present? %>
+<h2>Hi <%= @current_user.username %></h2>
+<% end %>
+banner
+
+ <%= link_to 'See All', items_path %>
+
+ items
+
+ <% @item.each do |item| %>
+ <%= link_to image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
+ <% end %>
+
+
+ comments

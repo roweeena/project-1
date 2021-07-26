@@ -1,0 +1,10 @@
+<h1>All</h1>
+
+<% @items.each do |item| %>
+<%= link_to image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
+
+<ul>
+  <li>Name: <%= link_to item.name,item %></li>
+</ul>
+
+<% end %>

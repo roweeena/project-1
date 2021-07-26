@@ -1,0 +1,13 @@
+<div class="logo">
+  <h3>fuku<br>zatsu</h3>
+  <nav>
+  <%= link_to 'home', root_path %>
+  <% if @current_user.present? %>
+  <%= link_to "your profile", user_path(@current_user.id) %>
+  <%= link_to "log out #{@current_user.username}" , login_path, :method => 'delete' %>
+  <% else %>
+  <%= link_to 'sign up', new_user_path %>
+  <%= link_to 'log in', login_path %>
+  <% end %>
+</nav>
+</div>

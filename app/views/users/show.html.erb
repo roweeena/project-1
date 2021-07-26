@@ -1,0 +1,46 @@
+<h2><% if @user.id == @current_user %>
+  <%= 'My profile' %>
+<% else %>
+  <%= @user.username %>'s profile</h2>
+<% end %>
+
+<%= image_tag @user.image, :class =>  'feature' if @user.image.present? %>
+<br>
+Name:
+<%= @user.name %>
+<br>
+Username:
+<%= @user.username %>
+<br>
+Date of Birth:
+<%= @user.dob %>
+<br>
+Location:
+<%= @user.location %>
+<br>
+<% if @user.id == @current_user  %>
+Email:
+<%= @user.email %>
+<br>
+
+Change password/edit profile
+Delete account
+
+<% end %>
+<br>
+<h3>All reviews</h3>
+<% @user.comments.each do |comment| %>
+From: <%= @user.username %>
+<br>
+<%= comment.message %>
+<br>
+<% end %>
+<br>
+
+<h3>My items</h3>
+<% @user.items.each do |item| %>
+<%= link_to image_tag(item.image),item %>
+<br>
+<%= item.name %>
+<% end %>
+<!-- <h3>Add a review</h3> -->

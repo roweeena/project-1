@@ -5,3 +5,41 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+u1 = User.create :email => 'roe0320@gmail.com', :dob => '1996-06-19', :location => 'Sydney, Australia', :username => 'weiner', :name => 'Rowena Leung',:password => 'testabc'
+u2 = User.create :email => 'admin@ga.com', :dob => '1990-08-20', :location => 'Sydney, Australia', :username => 'the_admin', :name => 'John Smith',:password => 'adminabc'
+u3 = User.create :email => 'rei@solo.com', :dob => '1994-07-30', :location => 'Melbourne, Australia', :username => 'lightsaber_2', :name => 'Rei Solo',:password => 'user1abc'
+
+puts "#{ User.count } users created."
+
+# Review.destroy_all
+# r1 = Review.create :message => "Responds quickly."
+# r2 = Review.create :message => "The shipping was quick! Thank you so much."
+# r3 = Review.create :message => "At first I was worried it wouldn't fit but when I tried it on, it was perfect. In love!"
+# r4 = Review.create :message => "I'd been looking for something like for ages So glad I found this."
+# r5 = Review.create :message => "I'd like to purchase this. Can we meet up?"
+#
+# puts "#{ Review.count } reviews created."
+
+Item.destroy_all
+i1 = Item.create :size => "S", :condition => "Excellent", :color => "Pink", :shipping => "$5.00", :name => "Floral cropped vest", :price => 25.00
+i2 = Item.create :size => "S-M", :condition => "Used, still in good condition", :color => "Navy", :shipping => "Free", :name => "Wide leg jeans", :price => 36.50
+i3 = Item.create :size => "L", :condition => "Used, still in good condition", :color => "Red", :shipping => "Free", :name => "Charles River windbreaker", :price => 36.50
+i4 = Item.create :size => "M-L", :condition => "Used with a small stain near the waist", :color => "Yello", :shipping => "Free", :name => "Plaid mini skirt", :price => 15.00
+
+puts "#{ Item.count } items created."
+
+##Associations##
+puts 'users and items'
+u1.items << i1 << i2
+u3.items << i3 << i4
+
+# puts "items and reviews"
+# i1.reviews << r1 << r2
+# i2.reviews << r3
+# i3.reviews << r4
+# i4.reviews << c5
+
+# puts "users and reviews"
+# u1.reviews << r2 << r4
+# u3.reviews << r3

@@ -1,0 +1,32 @@
+<%= form_for @item do |f| %>
+
+<%= f.label :name, "Name:" %>
+<%= f.text_field :name, :required => true %>
+
+<%= f.label :size, "Size:" %>
+<%= f.text_field :size %>
+
+<%= f.label :condition, "Condition:" %>
+<%= f.text_field :condition %>
+
+<%= f.label :color, "Color:" %>
+<%= f.text_field :color %>
+
+<%= f.label :shipping, "Shipping:" %>
+<%= f.text_field :shipping %>
+
+<%= f.label :style, "style:" %>
+<%= f.text_field :style %>
+
+<%= f.label :price, "price:" %>
+<%= f.number_field :price, step: :any, :placeholder => "$"
+%>
+
+<%= f.label :description, "description:" %>
+<%= f.text_field :description %>
+<%# change to cloudinary %>
+<%= f.label :image, "Image:" %>
+<%= f.url_field :image, :required => true %>
+
+<%= f.submit %>
+<% end %>
