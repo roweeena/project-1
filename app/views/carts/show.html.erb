@@ -4,7 +4,7 @@
   <div class="flex">
     <div class="card">
   <% @cart.line_items.each do |line_item| %>
-    <%= image_tag(line_item.item.image, :class => 'icon')  %>
+    <%= cl_image_tag(line_item.item.image, :class => 'icon')  %>
     <br>
      <%= link_to line_item.item.name, item_path(line_item.item_id) %>
     <br>

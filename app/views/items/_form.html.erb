@@ -25,8 +25,8 @@
 <%= f.label :description, "description:" %>
 <%= f.text_field :description %>
 <%# change to cloudinary %>
-<%= f.label :image, "Image:" %>
-<%= f.url_field :image, :required => true %>
+<%= f.label "Image:" %>
+<%= f.file_field :image, :required => true %>
 
 <%= f.submit %>
 <% end %>

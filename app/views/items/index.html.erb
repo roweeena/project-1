@@ -1,10 +1,12 @@
 <h1>All</h1>
-
+<div class="flex">
+  <div class="card">
 <% @items.each do |item| %>
-<%= link_to image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
+<%= link_to cl_image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
+<br>
+<%= link_to item.name,item %>
 
-<ul>
-  <li>Name: <%= link_to item.name,item %></li>
-</ul>
 
 <% end %>
+</div>
+</div>

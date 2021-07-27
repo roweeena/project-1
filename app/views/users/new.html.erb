@@ -8,25 +8,25 @@
 <% end %>
 <%= form_for @user do |f| %>
 
-<%= f.label :image, "upload profile pic" %>
+<%= f.label "upload profile pic" %>
 <%= f.file_field :image %>
 
-<%= f.label :name, "full name:"%>
+<%= f.label "full name:"%>
 <%= f.text_field :name, :required => true %>
-<%= f.label :dob, "date of birth:" %>
+<%= f.label "date of birth:" %>
 <%= f.date_field :dob, :required => true %>
 
-  <%= f.label :email, "email:"%>
+  <%= f.label "email:"%>
   <%= f.email_field :email, :required => true  %>
 
-  <%= f.label :location, "location:" %>
+  <%= f.label "location:" %>
   <%= f.text_field :location, :required => true %>
-  <%= f.label :username, "username:"%>
+  <%= f.label "username:"%>
   <%= f.text_field :username, :required => true %>
-<%= f.label :password, "password:" %>
+<%= f.label "password:" %>
 <%= f.password_field :password, :required => true %>
 
- <%= f.label :password_confirmation, "confirm password:" %>
+ <%= f.label "confirm password:" %>
  <%= f.password_field :password_confirmation, :required => true %>
 
   <%= f.submit "Sign up" %>

@@ -8,7 +8,7 @@ banner
  items
 
  <% @item.each do |item| %>
- <%= link_to image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
+ <%= link_to cl_image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
  <% end %>
 
 

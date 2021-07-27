@@ -7,7 +7,7 @@
 <h1><%= @item.name %></h1>
   <div class="flex">
     <div class="description">
-    <%= image_tag @item.image, :class =>  'feature' if @item.image.present? %>
+    <%= cl_image_tag @item.image, :class =>  'feature' if @item.image.present? %>
     </div>
       <br>
     <div class="description">
@@ -41,7 +41,7 @@
   <p>coming soon</p>
 </div>
 
-<%= link_to 'Add to bag',line_items_path(:item_id => @item.id), :method => 'post' %>
+<%= button_to "Add to bag", line_items_path(:item_id => @item.id), :method => 'post' %>
 <%= link_to '✉️ Ask seller a question' %>
 <%= link_to '❤️ Add to wishlist ' %>
 </div>

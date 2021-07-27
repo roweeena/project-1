@@ -4,14 +4,14 @@
   <%= @user.username %>'s profile</h2>
 <% end %>
 
-<%= image_tag @user.image, :class =>  'thumb' if @user.image.present? %>
+<%= cl_image_tag(@user.image, :class => 'thumb') if @user.image.present?%>
 <br>
 <p>Name:
   <%= @user.name %></p>
 <p>Username:
   <%= @user.username %></p>
 <p>Date of Birth:
-  <%= @user.dob.strftime '%A, %B %e, %Y' %></p>
+  <%= @user.dob %></p>
 <p>Location:
   <%= @user.location %></p>
 <% if @user == @current_user  %>
@@ -29,9 +29,11 @@ coming soon
 
 <h3>See my items</h3>
 <% @user.items.each do |item| %>
-<%= link_to image_tag(item.image, :class => 'thumb'), item %>
+<%# <%= link_to image_tag(item.image, :class => 'thumb'), item %> %>
 <br>
 <%= item.name %>
 <% end %>
+<br>
+<%= link_to 'Add item', new_item_path %>
 <% end %>
 <!-- <h3>Add a review</h3> -->
