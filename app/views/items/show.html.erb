@@ -41,7 +41,7 @@
   <p>coming soon</p>
 </div>
 
-<%= link_to 'Add to bag',line_items_path(:item => @item.id) %>
+<%= link_to 'Add to bag',line_items_path(:item_id => @item.id), :method => 'post' %>
 <%= link_to '✉️ Ask seller a question' %>
 <%= link_to '❤️ Add to wishlist ' %>
 </div>

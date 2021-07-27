@@ -4,7 +4,7 @@
   <% if @current_user.present? %>
 
   <%= link_to "your profile", user_path(@current_user.id) %>
-  <%= link_to 'cart' %>
+  <%= link_to 'cart', @current_cart %>
   <%= link_to "log out" , login_path, :method => 'delete' %>
   <% else %>
   <%= link_to 'sign up', new_user_path %>

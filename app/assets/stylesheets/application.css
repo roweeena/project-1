@@ -27,13 +27,6 @@ p{
   line-height: 0.5;
 }
 
-/* li {
-  background-color: #5dbb63 ;
-}
-
-li:nth-child(odd) {
-   background: white;
- } */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -50,6 +43,10 @@ li:nth-child(odd) {
 
 }
 
+.icon {
+  height: 10em;
+}
+
 .flex {
   display: flex;
 }
@@ -60,6 +57,17 @@ li:nth-child(odd) {
   padding: 12px;
 }
 
+.card{
+  width: 25%;
+  flex: 3;
+  padding: 12px;
+}
+
+
 .description:last-of-type {
+  box-shadow: 5px 5px 10px 4px rgba(36, 76, 66, 0.5);
+}
+
+.card:first-of-type {
   box-shadow: 5px 5px 10px 4px rgba(36, 76, 66, 0.5);
 }

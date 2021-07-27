@@ -1,15 +1,21 @@
+<h4><%= link_to 'Go Back', items_path %></h4>
+
 <h2>My Cart</h2>
-<ul>
+  <div class="flex">
+    <div class="card">
   <% @cart.line_items.each do |line_item| %>
-    <li>Item: <%= line_item.product.name %>/ Price: <%= number_to_currency(line_item.product.price) %>/ Total Price: <%= number_to_currency(line_item.total_price) %>
-
-
+    <%= image_tag(line_item.item.image, :class => 'icon')  %>
+    <br>
+     <%= link_to line_item.item.name, item_path(line_item.item_id) %>
+    <br>
+     Price: <%= number_to_currency(line_item.item.price) %>
+     <br>
         <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
-      </li>
-    </ul>
+        <br>
+
   <% end %>
-</ul>
-<h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-<%= link_to "Proceed to checkout"%>
-<br>
-<%= link_to "Empty cart", cart_path(@current_cart), :method => 'delete', :data => {:confirm => "Are you sure?"} %>
+  </div>
+</div>
+<hr>
+
+<h3>Total Price: <%= number_to_currency(@cart.total) %> </h3>
