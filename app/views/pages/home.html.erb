@@ -1,15 +1,15 @@
 <% if @current_user.present? %>
-<h2>Hi <%= cl_image_tag(@current_user.image, :class => 'profile-icon-s')%> <%= @current_user.username %></h2>
+<h2>Hi <%= cl_image_tag(@current_user.image, :class => 'profile-icon-s') if @current_user.image.present? %> <%= @current_user.username %></h2>
 <% end %>
-banner
 
- <%= link_to 'See All', items_path %>
+<h3>sell or buy preloved clothing at fukuzatsu</h3>
+<h5><em>because the world is complicated as it is without finding something new  to wear</em></h5>
+<div class="pic-ctn">
 
- items
+    <a href="/items"><img src="/assets/7QjF0V8NOms-unsplash.jpg" width= '600px' alt="" class="pic"></a>
+    <a href="/items"><img src="/assets/duy-hoang-ojZ4wJNUM5w-unsplash.jpg" width= '600px' alt="" class="pic"></a>
+    <a href="/items"><img src="/assets/angela-bailey-jlo7Bf4tUoY-unsplash.jpg" width= '600px' alt="" class="pic"></a>
+    <a href="/items"><img src="/assets/becca-mchaffie-Fzde_6ITjkw-unsplash.jpg" width= '600px' alt="" class="pic"></a>
+    <a href="/items"><img src="/assets/tamara-bellis-uN1m9Ca0aqo-unsplash.jpg" width= '600px' alt="" class="pic"></a>
 
- <% @item.each do |item| %>
- <%= link_to cl_image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
- <% end %>
-
-
- comments
+  </div>

@@ -25,14 +25,15 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# # Shopping cart gem
-# gem 'acts_as_shopping_cart', '~> 0.2.1'
+# stripe
+gem 'stripe'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'jquery-rails'
+gem 'bootstrap', '4.4.1'
 #Cloudinary
 gem 'cloudinary'
 

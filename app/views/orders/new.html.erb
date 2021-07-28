@@ -1,0 +1,30 @@
+<h1>Your order</h1>
+
+<% @current_cart.line_items.each do |line_item| %>
+  <% if line_item.item %>
+    <%= cl_image_tag(line_item.item.image, :class => 'icon')  %>
+    <br>
+     <%= link_to line_item.item.name, item_path(line_item.item_id) %>
+    <br>
+  <% end %>
+<% end %>
+<h4>Total Price: <%= number_to_currency(@current_cart.total) %> </h4>
+
+<h5>Please fill in your details in the form to complete transaction.</h5>
+<%= form_for @order do |f| %>
+
+    <%= f.label "name:" %><br>
+    <%= f.text_field :name, required: true, autofocus: true %>
+
+    <%= f.label "email:" %><br>
+    <%= f.email_field :email %>
+
+    <%= f.label "payment method:" %>
+    <%= f.select :pay_method, [["Credit card"], ["PayPal"]] %>
+
+    <%= f.label "shipping address:" %><br>
+    <%= f.text_area :address %>
+
+    <%= f.submit "Checkout" %>
+
+<% end %>

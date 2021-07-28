@@ -1,7 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 body {
-margin: 20px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -28,7 +27,7 @@ p{
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 12px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -95,4 +94,85 @@ button {
 
   border: 0.5px solid #ccc;
   border-radius: 100px;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.pic-ctn {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin-top: 5vh;
+}
+
+.pic-ctn > a {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+a:nth-child(2) {
+  animation-delay: 2s;
+}
+a:nth-child(3) {
+  animation-delay: 4s;
+}
+a:nth-child(4) {
+  animation-delay: 6s;
+}
+a:nth-child(5) {
+  animation-delay: 8s;
+}
+
+.col-md-4 {
+  width: 25%;
+  margin: 10px;
+  display: inline-block;
+}
+
+
+.footer {
+  text-align: right;
+  font-size: 12px;
+  margin: 0 auto;
+  padding: 12px;
+
+
+}
+#instagram  {
+position: absolute;
+  display: inline-block;
+margin-left: 12px;
+margin-right: auto;
+}
+
+#twitter {
+  position: absolute;
+         display: inline-block;
+      margin-left: 50px;
+      margin-right: auto;
+       }
 }

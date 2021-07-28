@@ -1,6 +1,7 @@
 <div class="logo">
   <a href="/"><h3>fuku<br>zatsu</h3></a>
   <nav>
+    <%= link_to 'shop', items_path %>
   <% if @current_user.present? %>
 
   <%= link_to image_tag('/assets/icons8-user-48.png', :width => '20px'), user_path(@current_user.id) %>
