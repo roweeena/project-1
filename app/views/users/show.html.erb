@@ -28,12 +28,11 @@ coming soon
 
 
 <h3>See my items</h3>
+<h4><%= link_to 'Add item', new_item_path %></h4>
 <% @user.items.each do |item| %>
-<%# <%= link_to image_tag(item.image, :class => 'thumb'), item %> %>
-<br>
-<%= item.name %>
+<%= link_to image_tag(item.image, :class => 'icon flex card'), item %>
 <% end %>
 <br>
-<%= link_to 'Add item', new_item_path %>
+
 <% end %>
 <!-- <h3>Add a review</h3> -->

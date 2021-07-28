@@ -1,32 +1,32 @@
 <%= form_for @item, :html => {:multipart => true}  do |f| %>
 
-<%= f.label :name, "Name:" %>
-<%= f.text_field :name, :required => true %>
+<%= f.label :image, "name:" %>
+<%= f.text_field :name, :class => 'form-control', :required => true %>
 
-<%= f.label :size, "Size:" %>
-<%= f.text_field :size %>
+<%= f.label :size; "size:" %>
+<%= f.text_field :size, :class => 'form-control' %>
 
-<%= f.label :condition, "Condition:" %>
-<%= f.text_field :condition %>
+<%= f.label :condition, "condition:" %>
+<%= f.text_field :condition, :class => 'form-control' %>
 
-<%= f.label :color, "Color:" %>
-<%= f.text_field :color %>
+<%= f.label :color, "color:" %>
+<%= f.text_field :color, :class => 'form-control' %>
 
-<%= f.label :shipping, "Shipping:" %>
-<%= f.number_field :shipping, :placeholder => "Enter 0 if free shipping"%>
+<%= f.label :shipping, "shipping:" %>
+<%= f.number_field :shipping, :class => 'form-control', :placeholder => "Enter 0 if free shipping"%>
 
-<%= f.label :style, "style:" %>
-<%= f.text_field :style %>
+<%= f.label :style ,"style:" %>
+<%= f.text_field :style, :class => 'form-control' %>
 
 <%= f.label :price, "price:" %>
-<%= f.number_field :price, step: :any, :placeholder => "$"
+<%= f.number_field :price, step: :any,  :class => 'form-control', :placeholder => "$"
 %>
 
 <%= f.label :description, "description:" %>
-<%= f.text_field :description %>
+<%= f.text_field :description, :class => 'form-control' %>
 <%# change to cloudinary %>
 <%= f.label "Image:" %>
-<%= f.file_field :image, :required => true %>
+<%= f.file_field :image, :class => 'form-control', :required => true %>
 
-<%= f.submit %>
+<%= f.submit :class => 'submit' %>
 <% end %>

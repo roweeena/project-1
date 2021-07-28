@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: rgb(230,230,250, 0.75);
+  margin:0;
+  padding: 0;
+  text-shadow:2px 2px 2px #fff;
 }
 
 .logo {
@@ -48,6 +52,8 @@ p{
 
 .flex {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 .description {
@@ -57,19 +63,23 @@ p{
 }
 
 .card{
-  width: 33%;
-  flex: 0 0 calc(33% - 20px);
-  padding: 12px;
-  
+  flex-basis: 20%; /* initial percantage */
+    -ms-flex: auto;
+    position: relative;
+    margin: 5px;
+    padding: 12px;
+    box-sizing: border-box;
+    display: inline-block;
 }
 
 
 .description:last-of-type {
-  box-shadow: 5px 5px 10px 4px rgba(36, 76, 66, 0.5);
+  box-shadow: 5px 5px 10px 8px rgba(1, 120, 74, 0.5);
 }
 
+
 .card{
-  box-shadow: 5px 5px 10px 4px rgba(36, 76, 66, 0.5);
+  box-shadow: 5px 5px 10px 8px rgba(1, 120, 74, 0.5);
 }
 
 button {
@@ -161,7 +171,6 @@ a:nth-child(5) {
   margin: 0 auto;
   padding: 12px;
 
-
 }
 #instagram  {
 position: absolute;
@@ -176,4 +185,25 @@ margin-right: auto;
       margin-left: 50px;
       margin-right: auto;
        }
+
+.form-control {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit{
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
