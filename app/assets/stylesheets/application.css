@@ -57,9 +57,10 @@ p{
 }
 
 .card{
-  width: 25%;
-  flex: 3;
+  width: 33%;
+  flex: 0 0 calc(33% - 20px);
   padding: 12px;
+  
 }
 
 

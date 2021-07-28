@@ -1,10 +1,12 @@
 <h1>All items</h1>
 <div class="flex">
-  <div class="card">
+
 <% @items.each do |item| %>
+<div class="card">
 <%= link_to cl_image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
 <br>
 <%= link_to item.name, item %>
-<% end %>
 </div>
+<% end %>
+
 </div>
