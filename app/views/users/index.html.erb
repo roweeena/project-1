@@ -1,7 +1,10 @@
-<h1>All</h1>
 
-only for admin
 
+<% if @current_user.admin? %>
+<h1>All users</h1>
 <% @users.each do |user| %>
   <p><%= link_to user.email, user %></p>
+<% end %>
+<% else %>
+<h3>Sorry, this page is off limits </h3>
 <% end %>

@@ -9,6 +9,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+    if params[:user][:image].present?
+      req = Cloudinary::Uploader.upload params[:user][:image]
+      @user.image = req["public_id"]
+      @user.save
+    end
      #create
     if @user.save # returns true on success
       session[:user_id] = @user.id
@@ -19,16 +24,20 @@ class UsersController < ApplicationController
   end
 
   def edit
+
     @user = User.find params[:id]
   end
 
   def update
     user = User.find params[:id]
-    if params[:image].present?
-      req = Cloudinary::Uploader.upload(params[:image])
+    if params[:user][:image].present?
+      req = Cloudinary::Uploader.upload(params[:user][:image])
       user.image = req["public_id"]
+      user.update_attribute(:image, user.image)
     end
-    user.update user_params
+
+    user.update_attributes user_params
+    user.save
     redirect_to user
   end
 
@@ -39,6 +48,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :location, :dob, :username, :image, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :location, :dob, :username, :email, :password, :password_confirmation)
   end
 end

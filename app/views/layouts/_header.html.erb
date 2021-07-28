@@ -4,7 +4,7 @@
   <% if @current_user.present? %>
 
   <%= link_to image_tag('/assets/icons8-user-48.png', :width => '20px'), user_path(@current_user.id) %>
-  <%= link_to image_tag('/assets/icons8-shopping-bag-48.png' + "#{total}", :width => '20px'), @current_cart %>
+  <%= link_to image_tag('/assets/icons8-shopping-bag-48.png', :width => '20px'), cart_path(@current_cart) %>
   <%= link_to "log out" , login_path, :method => 'delete' %>
   <% else %>
   <%= link_to 'sign up', new_user_path %>

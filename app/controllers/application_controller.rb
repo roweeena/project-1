@@ -33,6 +33,7 @@ def check_for_admin
         # If there is no session[:cart_id] associated with this user then create a new cart and store it in the users session id
         @current_cart = Cart.create
         session[:cart_id] = @current_cart.id
+    
       end
 
       end

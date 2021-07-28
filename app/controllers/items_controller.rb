@@ -24,8 +24,14 @@ class ItemsController < ApplicationController
 
   def update
     item = Item.find params[:id]
-    item.update item_params
-    redirect_to item
+    if params[:item][:image].present?
+      req = Cloudinary::Uploader.upload params[:item][:image]
+      item.image = req["public_id"]
+      item.update_attribute(:image, item.image)
+    end
+
+    item.update_attributes item_params
+    redirect_to item_path(item)
   end
 
   def show
@@ -41,6 +47,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:image, :size, :condition, :color, :shipping, :style, :name, :price, :description)
+    params.require(:item).permit(:size, :condition, :color, :shipping, :style, :name, :price, :description)
   end
 end

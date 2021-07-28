@@ -1,9 +1,4 @@
-
-<% if @item.user.present? %>
-    <%= link_to @user.username, user_path(@user.id) %>
-<% end %>
-
-
+<%= link_to "Back", items_path %>
 <h1><%= @item.name %></h1>
   <div class="flex">
     <div class="description">
@@ -11,6 +6,12 @@
     </div>
       <br>
     <div class="description">
+      <% if @item.user.present? %>
+          <%= link_to cl_image_tag(@user.image, :class => 'profile-icon-s'), user_path(@user.id) %>
+          <%= link_to @user.username, user_path(@user.id) %>
+          <br>
+          <small><%= @user.location %></small>
+      <% end %>
       <h5>Description:</h5>
         <%= @item.description %>
 
@@ -23,12 +24,13 @@
             <li>Style:<%= @item.style %></li>
             <li>Condition: <%= @item.condition %></li>
             <li>Color: <%= @item.color %></li>
-            <li>Shipping: <%= @item.shipping %></li>
+            <li>Shipping: <%= @item.shipping > 0 ? number_to_currency(@item.shipping) : "Free" %></li>
+
 
           </ul>
 
 
-<% if @item.user.present? %>
+<% if @user == @current_user%>
 <div class="editor">
   <%= link_to 'Edit Item', edit_item_path(@item) %>
   <%= link_to 'Delete Item', @item, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
@@ -40,9 +42,15 @@
   <h5>Reviews for this seller</h5>
   <p>coming soon</p>
 </div>
+<div class="items-icons">
+<%= link_to image_tag('/assets/icons8-add-basket-48.png', :width => '30px'), line_items_path(:item_id => @item.id), :method => 'post' %>
+</div>
+<div class="items-icons">
+<%= link_to image_tag('/assets/icons8-mail-48.png', :width => '30px') %>
+</div>
 
-<%= button_to "Add to bag", line_items_path(:item_id => @item.id), :method => 'post' %>
-<%= link_to '✉️ Ask seller a question' %>
-<%= link_to '❤️ Add to wishlist ' %>
+<div class="items-icons">
+<%= link_to image_tag('/assets/icons8-heart-48.png', :width => '30px') %>
+</div>
 </div>
 </div>

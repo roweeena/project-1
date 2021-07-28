@@ -3,8 +3,8 @@
 <% else %>
   <%= @user.username %>'s profile</h2>
 <% end %>
-
-<%= cl_image_tag(@user.image, :class => 'thumb') if @user.image.present?%>
+<br>
+<%= cl_image_tag(@user.image, :class => 'profile-icon') if @user.image.present?%>
 <br>
 <p>Name:
   <%= @user.name %></p>
