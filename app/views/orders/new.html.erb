@@ -1,5 +1,5 @@
 <h1>Your order</h1>
-
+<div class="order-form">
 <% @current_cart.line_items.each do |line_item| %>
   <% if line_item.item %>
     <%= cl_image_tag(line_item.item.image, :class => 'icon')  %>
@@ -13,18 +13,31 @@
 <h5>Please fill in your details in the form to complete transaction.</h5>
 <%= form_for @order do |f| %>
 
-    <%= f.label "name:" %><br>
-    <%= f.text_field :name, required: true, autofocus: true %>
+    <%= f.label "Name:" %><br>
+    <%= f.text_field :name, :class=> 'form-control',required: true, autofocus: true %>
 
-    <%= f.label "email:" %><br>
-    <%= f.email_field :email %>
+    <%= f.label "Email:" %><br>
+    <%= f.email_field :email, :class=> 'form-control' %>
 
-    <%= f.label "payment method:" %>
-    <%= f.select :pay_method, [["Credit card"], ["PayPal"]] %>
+    <%= f.label "Credit Card Number:" %>
+    <%= f.text_field :cc_number, :class=> 'form-control' %>
 
-    <%= f.label "shipping address:" %><br>
-    <%= f.text_area :address %>
+    <%= f.label "Exp:" %>
+    <%= f.text_field :exp, :class=> 'form-control' %>
 
-    <%= f.submit "Checkout" %>
+    <%= f.label "CVV:" %>
+    <%= f.text_field :cvv , :class=> 'form-control' %>
+
+    <%= f.label "Address:" %><br>
+    <%= f.text_area :address, :class=> 'form-control' %>
+
+    <%= f.label "Suburb/City:" %><br>
+    <%= f.text_field :location, :class=> 'form-control' %>
+
+    <%= f.label "Postcode:" %><br>
+    <%= f.text_field :postcode, :class=> 'form-control' %>
+
+    <%= f.submit "Checkout", :class=> 'submit' %>
 
 <% end %>
+</div>

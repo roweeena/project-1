@@ -12,14 +12,13 @@ u3 = User.create :email => 'rei@solo.com', :dob => '1994-07-30', :location => 'M
 
 puts "#{ User.count } users created."
 
-# Review.destroy_all
-# r1 = Review.create :message => "Responds quickly."
-# r2 = Review.create :message => "The shipping was quick! Thank you so much."
-# r3 = Review.create :message => "At first I was worried it wouldn't fit but when I tried it on, it was perfect. In love!"
-# r4 = Review.create :message => "I'd been looking for something like for ages So glad I found this."
-# r5 = Review.create :message => "I'd like to purchase this. Can we meet up?"
-#
-# puts "#{ Review.count } reviews created."
+Review.destroy_all
+r1 = Review.create :message => "Responds quickly."
+r2 = Review.create :message => "The shipping was quick! Thank you so much."
+r3 = Review.create :message => "At first I was worried it wouldn't fit but when I tried it on, it was perfect. In love!"
+r4 = Review.create :message => "I'd been looking for something like for ages So glad I found this."
+
+puts "#{ Review.count } reviews created."
 
 Item.destroy_all
 i1 = Item.create :size => "S", :condition => "Excellent", :color => "Pastel green", :shipping => 5.00, :name => "Floral cropped vest", :price => 25.00,  :image => '/assets/P0.jpeg'
@@ -34,12 +33,6 @@ puts 'users and items'
 u1.items << i1 << i2
 u3.items << i3 << i4
 
-# puts "items and reviews"
-# i1.reviews << r1 << r2
-# i2.reviews << r3
-# i3.reviews << r4
-# i4.reviews << c5
-
-# puts "users and reviews"
-# u1.reviews << r2 << r4
-# u3.reviews << r3
+puts "users and reviews"
+u1.reviews << r2 << r4
+u3.reviews << r3

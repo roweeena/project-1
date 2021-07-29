@@ -25,18 +25,10 @@
                 <li>Color: <%= @item.color %></li>
                 <li>Shipping: <%= @item.shipping > 0 ? number_to_currency(@item.shipping) : "Free" %></li>
               </ul>
-
-                <% if @user == @current_user%>
-                  <div class="editor">
-                    <%= link_to 'Edit Item', edit_item_path(@item) %>
-                    <%= link_to 'Delete Item', @item, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
+                  <div class="comment-box">
+                    <h5><%= link_to 'See reviews for this seller',user_path(@user.id) %></h5>
                   </div>
-                <% end %>
 
-                <div class="comment-box">
-                  <h5>Reviews for this seller</h5>
-                  <p>coming soon</p>
-                </div>
                 <div class="items-icons">
                     <%= link_to image_tag('/assets/icons8-add-basket-48.png', :width => '30px'), line_items_path(:item_id => @item.id), :method => 'post' %>
                     </div>
@@ -47,5 +39,12 @@
                 <div class="items-icons">
                   <%= link_to image_tag('/assets/icons8-heart-48.png', :width => '30px') %>
                 </div>
+                    <br>
+                <% if @user == @current_user%>
+                  <div class="editor">
+                    <%= link_to 'Edit Item', edit_item_path(@item) %>
+                    <%= link_to 'Delete Item', @item, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
+                  </div>
+                <% end %>
         </div>
   </div>

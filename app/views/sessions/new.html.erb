@@ -1,11 +1,13 @@
 <h1>Log In</h1>
 <%# NON CRUD %>
+<div class="login">
 <%= form_tag login_path do %>
-  <%= label_tag :email, "email:" %>
+  <%= label_tag :email, "Email:" %>
   <%= email_field_tag :email,nil, :class => 'form-control' %>
 
-  <%= label_tag :password, "password:" %>
+  <%= label_tag :password, "Password:" %>
   <%= password_field_tag :password,nil, :class => 'form-control' %>
 
   <%= submit_tag "Sign In", :class => 'submit' %>
 <% end %>
+</div>

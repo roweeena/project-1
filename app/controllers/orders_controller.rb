@@ -16,8 +16,9 @@ class OrdersController < ApplicationController
     @order.save
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
-    redirect_to root_path
+    redirect_to orders_path
   end
+
 
   def show
     @order = Order.find params[:id]
@@ -25,6 +26,6 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:name, :email, :address, :pay_method)
+    params.require(:order).permit(:name, :email, :address, :cc_number, :cvv, :exp, :location, :state, :postcode)
   end
 end

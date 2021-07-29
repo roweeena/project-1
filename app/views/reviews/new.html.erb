@@ -1,0 +1,11 @@
+<h3>Add a review</h3>
+
+<%= form_for @review do |f| %>
+
+  <%= f.label :message, "Your review:" %>
+  <%= f.text_field :message, :required => true %>
+
+  <%= hidden_field_tag :user_id, @user.id %>
+  <%= f.submit "Add Review"%>
+
+  <% end %>

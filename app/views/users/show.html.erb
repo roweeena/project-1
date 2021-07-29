@@ -35,8 +35,17 @@
             <% end %>
           <br>
       <% end %>
+      <% if @user.reviews.present? %>
+        <h3>All reviews</h3>
+          <% @user.reviews.each do |review| %>
+            <p><strong>From: </strong><%= review.user.username %></p>
+            <p><%= review.message %></p>
+          <% end %>
+      <% end %>
+        <br>
 
-    <h3>All reviews</h3>
-    coming soon
-    <br>
-<!-- <h3>Add a review</h3> -->
+        <% if @current_user.present? %>
+            <%= link_to 'Add review', new_review_path %>
+              <% elsif @current_user.nil? %>
+            <p><%=  link_to 'Sign up', new_user_path %> or <%=  link_to 'log in', login_path %> to leave a review.</p>
+        <% end %>

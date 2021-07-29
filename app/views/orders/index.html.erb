@@ -7,7 +7,8 @@
     <p>Your orders: </p>
     <ul>
       <% order.line_items.each do |item| %>
-        <li> <%= line_item.item.name %></li>
+        <%= image_tag(item.item) %>
+        <%= item.item.name %>
       <% end %>
     </ul>
   <% end%>
