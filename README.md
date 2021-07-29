@@ -8,7 +8,7 @@ The app can be found [here](https://fukuzatsu-project1.herokuapp.com/)
 
 I wanted to make a marketplace app that would allow sellers to sell preloved clothes and accessories to each other.
 
-
+I was inspired by other marketplace and ecommerce stores like [Depop](https://www.depop.com/), [ASOS Marketplace](https://marketplace.asos.com/) and [Etsy](https://www.etsy.com/au/), and wanted to challenge myself to make something similar. 
 ### Dependencies and Configuration
 The app runs on Ruby version 2.7.4 and  Rails 5.2.6.
 
