@@ -1,34 +1,38 @@
 <h1>Sign up </h1>
-<% if @user.errors.any?  %>
-<ol>
-  <% @user.errors.full_messages.each do |message|%>
-  <li><%= message %></li>
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |message|%>
+      <li>
+        <%=message %>
+      </li>
+      <% end %>
+  </ol>
   <% end %>
-</ol>
-<% end %>
-<%= form_for @user do |f| %>
+    <%=form_for @user do |f| %>
 
-<%= f.label :image, "upload profile pic" %>
-<%= f.file_field :image, :class => 'form-control' %>
+      <%=f.label :image, "upload profile pic" %>
+      <%=file_field :image, :class=> 'form-control' %>
 
-<%= f.label :name, "full name:"%>
-<%= f.text_field :name, :class => 'form-control',  :required => true %>
+      <%=f.label :name, "full name:"%>
+      <%=f.text_field :name, :class=> 'form-control', :required => true %>
 
-<%= f.label :dob, "date of birth:" %>
-<%= f.date_field :dob, :class => 'form-control',:required => true %>
+      <%=f.label :dob, "date of birth:" %>
+      <%=f.date_field :dob, :class=> 'form-control',:required => true %>
 
-  <%= f.label :email, "email:"%>
-  <%= f.email_field :email, :class => 'form-control', :required => true  %>
+      <%=f.label :email, "email:"%>
+      <%=f.email_field :email, :class=> 'form-control', :required => true %>
 
-  <%= f.label :location, "location:" %>
-  <%= f.text_field :location, :class => 'form-control', :required => true %>
-  <%= f.label :username, "username:"%>
-  <%= f.text_field :username, :class => 'form-control', :required => true %>
-<%= f.label :password, "password:" %>
-<%= f.password_field :password, :class => 'form-control', :required => true %>
+      <%=f.label :location, "location:" %>
+      <%=f.text_field :location, :class=> 'form-control', :required => true %>
 
- <%= f.label :password_confirmation, "confirm password:" %>
- <%= f.password_field :password_confirmation, :class => 'form-control', :required => true %>
+      <%=f.label :username, "username:"%>
+      <%=f.text_field :username, :class=> 'form-control', :required => true %>
 
-  <%= f.submit "Sign up", :class => 'submit' %>
-<% end %>
+      <%=f.label :password, "password:" %>
+      <%=f.password_field :password, :class=> 'form-control', :required => true %>
+
+      <%=f.label :password_confirmation, "confirm password:" %>
+      <%=f.password_field :password_confirmation, :class=> 'form-control', :required => true %>
+
+      <%=f.submit "Sign up", :class=> 'submit' %>
+    <% end %>

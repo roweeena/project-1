@@ -1,5 +1,5 @@
-<% if @user = @current_user %>
-<h2>All Orders</h2>
+
+<h2>Your Order</h2>
 
   <% @orders.each do |order| %>
     <p>Name: <%= order.name %></p>
@@ -10,4 +10,3 @@
       <li> <%= line_item.item.name %></li>
       <% end %>
   <% end %>
-<% end %>

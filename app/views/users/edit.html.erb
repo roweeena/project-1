@@ -1,19 +1,22 @@
 <%= form_for @user, :html => {:multipart => true} do |f| %>
 
-<%= f.label "change profile pic:" %>
-<%= f.file_field :image %>
-<%= f.label "full name:"%>
-<%= f.text_field :name, :required => true %>
-<%= f.label "date of birth:" %>
-<%= f.date_field :dob, :required => true %>
+  <%= f.label "change profile pic:" %>
+  <%= f.file_field :image %>
+
+  <%= f.label "full name:"%>
+  <%= f.text_field :name, :required => true %>
+
+  <%= f.label "date of birth:" %>
+  <%= f.date_field :dob, :required => true %>
 
   <%= f.label  "email:"%>
   <%= f.email_field :email, :required => true  %>
 
   <%= f.label  "location:" %>
   <%= f.text_field :location, :required => true %>
+
   <%= f.label "username:"%>
   <%= f.text_field :username, :required => true %>
 
   <%= f.submit 'Update' %>
-  <% end %>
+<% end %>

@@ -1,18 +1,13 @@
-<% if @current_user.admin? %>
 
-<h2>All Orders</h2>
+<h2>Your Orders</h2>
 
-<% @orders.each do |order| %>
-  <p>Name: <%= order.name %></p>
-  <p>Email: <%= order.email %></p>
-  <p>Your orders: </p>
-  <ul>
-    <% order.line_items.each do |item| %>
-    <li> <%= line_item.item.name %></li>
-    <% end %>
-
-  </ul>
-<% end%>
-<% else %>
-<h3>Sorry, this page is off limits </h3>
-<% end %>
+  <% @orders.each do |order| %>
+    <p>Name: <%= order.name %></p>
+    <p>Email: <%= order.email %></p>
+    <p>Your orders: </p>
+    <ul>
+      <% order.line_items.each do |item| %>
+        <li> <%= line_item.item.name %></li>
+      <% end %>
+    </ul>
+  <% end%>
