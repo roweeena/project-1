@@ -10,11 +10,13 @@
         <% if @current_user.present? %>
           <%= link_to 'Your profile', user_path(@current_user.id) %>
           <%= link_to 'Your cart', cart_path(@current_cart) %>
-          <%= link_to 'Your orders', orders_path %>
+          <%= link_to 'Your orders', order_path(@current_user.id) %>
           <%= link_to "Log out", login_path, :method => 'delete' %>
           <% else %>
           <%= link_to 'Sign up', new_user_path %>
           <%= link_to 'Log in', login_path %>
+          <%= link_to 'Contact us', 'https://www.youtube.com/watch?v=k6LB6nrkoJU', target: :_blank  %>
+          <%= link_to 'About us', '#' %>
         <% end %>
       </nav>
   </details>
