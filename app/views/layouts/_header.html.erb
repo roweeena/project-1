@@ -3,6 +3,7 @@
     <details>
       <summary></summary>
       <nav class="menu">
+        <%= link_to 'Home', root_path %>
         <%= link_to 'Shop', items_path %>
         <% if @current_user.present? %>
           <%= link_to 'Your profile', user_path(@current_user.id) %>
