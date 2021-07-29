@@ -1,32 +1,32 @@
 <%= form_for @item, :html => {:multipart => true}  do |f| %>
 
-  <%= f.label :image, "Name:" %>
-  <%= f.text_field :name, :class => 'form-control', :required => true %>
+  <%= label_tag  " " %>
+  <%= f.text_field :name, :class => 'form-control', :placeholder => 'Name', :required => true %>
 
-  <%= f.label :size; "Size:" %>
-  <%= f.text_field :size, :class => 'form-control' %>
+  <%= label_tag " " %>
+  <%= f.text_field :size, :placeholder => 'Size', :class => 'form-control' %>
 
-  <%= f.label :condition, "Condition:" %>
-  <%= f.text_field :condition, :class => 'form-control' %>
+  <%= label_tag " " %>
+  <%= f.text_field :condition, :placeholder => 'Condition',:class => 'form-control' %>
 
-  <%= f.label :color, "Color:" %>
-  <%= f.text_field :color, :class => 'form-control' %>
+  <%= label_tag " "%>
+  <%= f.text_field :color, :placeholder => 'Colour',:class => 'form-control' %>
 
-  <%= f.label :shipping, "Shipping:" %>
-  <%= f.number_field :shipping, :class => 'form-control', :placeholder => "Enter 0 if free shipping"%>
+  <%= label_tag " " %>
+  <%= f.number_field :shipping, :class => 'form-control', :placeholder => "Shipping / Enter 0 if free shipping"%>
 
-  <%= f.label :style ,"Style:" %>
-  <%= f.text_field :style, :class => 'form-control' %>
+  <%= label_tag " " %>
+  <%= f.text_field :style, :placeholder => "Style", :class => 'form-control' %>
 
-  <%= f.label :price, "Price:" %>
-  <%= f.number_field :price, step: :any,  :class => 'form-control', :placeholder => "$"
-  %>
+  <%= label_tag " "%>
+  <%= f.number_field :price, step: :any, :placeholder => 'Price / $', :class => 'form-control'%>
 
-  <%= f.label :description, "Description:" %>
-  <%= f.text_field :description, :class => 'form-control' %>
+  <%= label_tag " " %>
+  <%= f.text_field :description, :placeholder => 'Description', :class => 'form-control' %>
+
   <%# change to cloudinary %>
-  <%= f.label "Image:" %>
-  <%= f.file_field :image, :class => 'form-control', :required => true %>
+  <%= label_tag " " %>
+  <%= f.file_field :image, :class => 'form-control', :placeholder => 'Image:', :required => true %>
 
   <%= f.submit :class => 'Submit' %>
 <% end %>
