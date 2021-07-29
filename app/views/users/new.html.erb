@@ -10,29 +10,29 @@
   <% end %>
     <%=form_for @user do |f| %>
 
-      <%=f.label :image, "upload profile pic" %>
-      <%=file_field :image, :class=> 'form-control' %>
+      <%=label_tag :image, "Upload profile picture" %>
+      <%=f.file_field :image, :class=> 'form-control' %>
 
-      <%=f.label :name, "full name:"%>
-      <%=f.text_field :name, :class=> 'form-control', :required => true %>
+      <%=label_tag :name, " "%>
+      <%=f.text_field :name, :class=> 'form-control', :placeholder => "Name", :required => true %>
 
-      <%=f.label :dob, "date of birth:" %>
-      <%=f.date_field :dob, :class=> 'form-control',:required => true %>
+      <%=label_tag :dob, " " %>
+      <%=f.date_field :dob, :class=> 'form-control', :placeholder => "Date of Birth":required => true %>
 
-      <%=f.label :email, "email:"%>
-      <%=f.email_field :email, :class=> 'form-control', :required => true %>
+      <%=label_tag :email, " "%>
+      <%=f.email_field :email, :class=> 'form-control',:placeholder => 'Email', :required => true %>
 
-      <%=f.label :location, "location:" %>
-      <%=f.text_field :location, :class=> 'form-control', :required => true %>
+      <%=label_tag :location, " " %>
+      <%=f.text_field :location, :class=> 'form-control', :placeholder => "Location", :required => true %>
 
-      <%=f.label :username, "username:"%>
-      <%=f.text_field :username, :class=> 'form-control', :required => true %>
+      <%=label_tag :username, " "%>
+      <%=f.text_field :username, :class=> 'form-control', :placeholder => 'Username', :required => true %>
 
-      <%=f.label :password, "password:" %>
-      <%=f.password_field :password, :class=> 'form-control', :required => true %>
+      <%=label_tag :password, " " %>
+      <%=f.password_field :password, :class=> 'form-control', :placeholder => "Password:", :required => true %>
 
-      <%=f.label :password_confirmation, "confirm password:" %>
-      <%=f.password_field :password_confirmation, :class=> 'form-control', :required => true %>
+      <%=label_tag :password_confirmation, " " %>
+      <%=f.password_field :password_confirmation, :class=> 'form-control', :placeholder => "Confirm password", :required => true %>
 
       <%=f.submit "Sign up", :class=> 'submit' %>
     <% end %>
