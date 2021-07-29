@@ -13,8 +13,8 @@ class ItemsController < ApplicationController
     if params[:item][:image].present?
       req = Cloudinary::Uploader.upload params[:item][:image]
       item.image = req["public_id"]
-      item.save
     end
+    item.save
     redirect_to item
   end
 

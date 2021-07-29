@@ -3,39 +3,39 @@
         <% else %>
       <%= @user.username %>'s profile</h2>
     <% end %>
-    <br>
-    <%= cl_image_tag(@user.image, :class => 'profile-icon') if @user.image.present?%>
-    <br>
-    <p>Name:
-      <%= @user.name %>
-    </p>
-    <p>Username:
-      <%= @user.username %>
-    </p>
-    <p>Date of Birth:
-      <%= @user.dob %>
-    </p>
-    <p>Location:
-      <%= @user.location %>
-    </p>
-      <% if @user == @current_user  %>
-        <p>Email:
-          <%= @user.email %>
-        </p>
-        <p><%= link_to 'Edit profile', edit_user_path %>
-        <%= link_to 'Delete account', @user, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
-        </p>
+      <br>
+        <%= cl_image_tag(@user.image, :class => 'profile-icon') if @user.image.present?%>
         <br>
-        <h3>See my items</h3>
-        <% @user.items.each do |item| %>
-          <%= link_to image_tag(item.image, :class => 'icon flex card'), item %>
-        <% end %>
-        <h4><%= link_to 'Add item', new_item_path %></h4>
-          <% elsif @user != @current_user || @current_user.present? %>
-          <h3>See seller's items</h3>
-            <% @user.items.each do |item| %>
-              <%= link_to image_tag(item.image, :class => 'icon flex card'), item %>
-            <% end %>
+        <p>Name:
+          <%= @user.name %>
+        </p>
+        <p>Username:
+          <%= @user.username %>
+        </p>
+        <p>Date of Birth:
+          <%= @user.dob %>
+        </p>
+        <p>Location:
+          <%= @user.location %>
+        </p>
+        <% if @user == @current_user  %>
+          <p>Email:
+            <%= @user.email %>
+          </p>
+          <p><%= link_to 'Edit profile', edit_user_path %>
+          <%= link_to 'Delete account', @user, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
+          </p>
+          <br>
+            <h3>See my items</h3>
+              <% @user.items.each do |item| %>
+                <%= link_to cl_image_tag(item.image, :class => 'icon flex card'), item %>
+              <% end %>
+              <h4><%= link_to 'Add item', new_item_path %></h4>
+                <% elsif @user != @current_user || @current_user.present? %>
+                <h3>See seller's items</h3>
+                  <% @user.items.each do |item| %>
+                    <%= link_to cl_image_tag(item.image, :class => 'icon flex card'), item %>
+          <% end %>
           <br>
       <% end %>
       <% if @user.reviews.present? %>

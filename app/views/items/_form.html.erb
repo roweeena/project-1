@@ -13,13 +13,13 @@
   <%= f.text_field :color, :placeholder => 'Colour',:class => 'form-control' %>
 
   <%= label_tag " " %>
-  <%= f.number_field :shipping, :class => 'form-control', :placeholder => "Shipping / Enter 0 if free shipping"%>
+  <%= f.number_field :shipping, :class => 'form-control', :placeholder => "Shipping / Enter 0 if free shipping", :required => true%>
 
   <%= label_tag " " %>
   <%= f.text_field :style, :placeholder => "Style", :class => 'form-control' %>
 
   <%= label_tag " "%>
-  <%= f.number_field :price, step: :any, :placeholder => 'Price / $', :class => 'form-control'%>
+  <%= f.number_field :price, step: :any, :placeholder => 'Price / $', :class => 'form-control', :required => true %>
 
   <%= label_tag " " %>
   <%= f.text_field :description, :placeholder => 'Description', :class => 'form-control' %>

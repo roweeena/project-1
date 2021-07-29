@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :users
   resources :items
   resources :reviews, :only => [:new, :edit]
-
   resources :orders
 
   get 'carts/:id' => "carts#show", as: "cart"

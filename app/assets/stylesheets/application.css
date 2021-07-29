@@ -165,6 +165,7 @@ p{
 	/* initial percantage */
 	-ms-flex: auto;
 	position: relative;
+	max-width: 500px;
 	margin: 5px;
 	padding: 12px;
 	box-sizing: border-box;
