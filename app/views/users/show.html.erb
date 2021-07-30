@@ -38,11 +38,11 @@
           <% end %>
           <br>
       <% end %>
-      <% if @user.reviews.present? %>
+      <% if @reviews.present? %>
         <h3>All reviews</h3>
-          <% @user.reviews.each do |review| %>
-            <p><strong>From: </strong><%= review.user.username %></p>
-            <p><%= review.message %></p>
+          <% @reviews.each do |review| %>
+            <p><strong>From: </strong><%= user.username %></p>
+            <p><%= @review.message %></p>
           <% end %>
       <% end %>
         <br>
