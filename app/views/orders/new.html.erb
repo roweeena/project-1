@@ -1,41 +1,44 @@
-<h1>Your order</h1>
+<h2>Your order</h2>
 <div class="order-form">
 <% @current_cart.line_items.each do |line_item| %>
+<div class="card">
   <% if line_item.item %>
     <%= cl_image_tag(line_item.item.image, :class => 'icon')  %>
     <br>
      <%= link_to line_item.item.name, item_path(line_item.item_id) %>
     <br>
+    </div>
   <% end %>
 <% end %>
+
 <h4>Total Price: <%= number_to_currency(@current_cart.total) %> </h4>
 
 <h5>Please fill in your details in the form to complete transaction.</h5>
 <%= form_for @order do |f| %>
 
-    <%= f.label "Name:" %><br>
-    <%= f.text_field :name, :class=> 'form-control',required: true, autofocus: true %>
+    <%= f.label " " %><br>
+    <%= f.text_field :name, :placeholder => 'Name', :class=> 'form-control',required: true, autofocus: true %>
 
-    <%= f.label "Email:" %><br>
-    <%= f.email_field :email, :class=> 'form-control' %>
+    <%= f.label " " %><br>
+    <%= f.email_field :email,:placeholder => 'Email', :class=> 'form-control' %>
 
-    <%= f.label "Credit Card Number:" %>
-    <%= f.text_field :cc_number, :class=> 'form-control' %>
+    <%= f.label " " %>
+    <%= f.text_field :cc_number,:placeholder => 'Credit Card Number', :class=> 'form-control' %>
 
-    <%= f.label "Exp:" %>
-    <%= f.text_field :exp, :class=> 'form-control' %>
+    <%= f.label " " %>
+    <%= f.text_field :exp,:placeholder => 'Exp', :class=> 'form-control' %>
 
-    <%= f.label "CVV:" %>
-    <%= f.text_field :cvv , :class=> 'form-control' %>
+    <%= f.label " " %>
+    <%= f.text_field :cvv ,:placeholder => 'CCV', :class=> 'form-control' %>
 
-    <%= f.label "Address:" %><br>
-    <%= f.text_area :address, :class=> 'form-control' %>
+    <%= f.label " " %><br>
+    <%= f.text_area :address, :placeholder => 'Address',:class=> 'form-control' %>
 
-    <%= f.label "Suburb/City:" %><br>
-    <%= f.text_field :location, :class=> 'form-control' %>
+    <%= f.label " " %><br>
+    <%= f.text_field :location, :placeholder => 'Suburb/City', :class=> 'form-control' %>
 
-    <%= f.label "Postcode:" %><br>
-    <%= f.text_field :postcode, :class=> 'form-control' %>
+    <%= f.label " " %><br>
+    <%= f.text_field :postcode, :placeholder => 'Postcode', :class=> 'form-control' %>
 
     <%= f.submit "Checkout", :class=> 'submit' %>
 

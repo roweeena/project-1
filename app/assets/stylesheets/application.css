@@ -140,6 +140,9 @@ p{
 .container > .login {
   height: 60vh;
 }
+.container > .order-form {
+  height: 100vh;
+}
 
 .thumb{
 	height: 15em;
