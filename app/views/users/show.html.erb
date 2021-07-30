@@ -38,10 +38,10 @@
           <% end %>
           <br>
       <% end %>
-      <h3>Coming soon</h3>
 
         <% if @current_user.present? %>
-            <%= link_to 'Reviews', new_review_path %>
+            <h4><%= link_to 'Reviews', new_review_path %></h4>
+              <p>Coming soon</p>
               <% elsif @current_user.nil? %>
             <p><%=  link_to 'Sign up', new_user_path %> or <%=  link_to 'log in', login_path %> to leave a review.</p>
         <% end %>
