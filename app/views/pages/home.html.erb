@@ -1,3 +1,9 @@
+<% if flash[:notice].present? %>
+  <h3 class="Purchase successful">
+  <%= flash[:notice] %>
+  </h3>
+<% end %>
+
 <% if @current_user.present? %>
   <h2>Hi <%= cl_image_tag(@current_user.image, :class => 'profile-icon-s') if @current_user.image.present? %> <%= @current_user.username %></h2>
 <% end %>

@@ -4,7 +4,7 @@
   <% @orders.each do |order| %>
     <p>Name: <%= order.name %></p>
     <p>Email: <%= order.email %></p>
-    <p>Your orders: </p>
+    <p>Order: </p>
     <ul>
       <% order.line_items.each do |item| %>
         <%= cl_image_tag(item.item) %>
