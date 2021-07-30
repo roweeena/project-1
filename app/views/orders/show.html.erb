@@ -1,12 +1,14 @@
 
 <h2>Your Order</h2>
 
-  <% @orders.each do |order| %>
-    <p>Name: <%= order.name %></p>
-    <p>Email: <%= order.email %></p>
-    <p>Your orders: </p>
-    <ul>
-      <% order.line_items.each do |item| %>
-      <li> <%= line_item.item.name %></li>
-      <% end %>
-  <% end %>
+<% @orders.each do |order| %>
+  <p>Name: <%= order.name %></p>
+  <p>Email: <%= order.email %></p>
+  <p>Your orders: </p>
+  <ul>
+    <% order.line_items.each do |item| %>
+      <%= cl_image_tag(item.item) %>
+      <%= item.item.name %>
+    <% end %>
+  </ul>
+<% end%>

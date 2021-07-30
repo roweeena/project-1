@@ -1,5 +1,5 @@
-
-<h2>Your Orders</h2>
+<% if @current_user.admin? %>
+<h2>All Orders</h2>
 
   <% @orders.each do |order| %>
     <p>Name: <%= order.name %></p>
@@ -7,8 +7,12 @@
     <p>Your orders: </p>
     <ul>
       <% order.line_items.each do |item| %>
-        <%= image_tag(item.item) %>
+        <%= cl_image_tag(item.item) %>
         <%= item.item.name %>
       <% end %>
     </ul>
   <% end%>
+<% else %>
+<h3>Sorry, this page is off limits</h3>
+
+<% end %>
