@@ -269,6 +269,11 @@ a:nth-child(5) {
 	margin-left: 50px;
 	margin-right: auto;
 }
+
+.order-form > .socials {
+	position:absolute;
+	margin-top: 100px;
+}
 .form-control {
 	width: 100%;
 	padding: 12px 20px;

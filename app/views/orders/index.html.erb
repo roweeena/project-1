@@ -7,8 +7,9 @@
     <p>Order: </p>
     <ul>
       <% order.line_items.each do |item| %>
-        <%= cl_image_tag(item.item) %>
-        <%= item.item.name %>
+        <ul>
+          <li><p><%= item.item.name %> / <%= number_to_currency item.item.price %></li></p>
+        </ul>
       <% end %>
     </ul>
   <% end%>
