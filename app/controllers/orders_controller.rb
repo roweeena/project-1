@@ -16,8 +16,8 @@ class OrdersController < ApplicationController
     @order.save
     Cart.destroy session[:cart_id]
     session[:cart_id] = nil #destroy the cart and set the session back to nil
-    flash[:notice] = 'Purchase successful'
-    redirect_to root_path
+    flash[:notice] = "Your order has been received. An confirmation email will arrive shortly"
+    redirect_to charges_path
   end
 
 

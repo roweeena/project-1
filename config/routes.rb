@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :items
   resources :reviews, :only => [:new, :edit]
   resources :orders
+  resources :charges
+
+
 
   get 'carts/:id' => "carts#show", as: "cart"
   delete 'carts/:id' => "carts#destroy"

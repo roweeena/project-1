@@ -22,19 +22,29 @@
           <p>Email:
             <%= @user.email %>
           </p>
-          <p><%= link_to 'Edit profile', edit_user_path %>
-          <%= link_to 'Delete account', @user, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
-          </p>
+          <p class="button_path edit"><%= link_to 'Edit profile', edit_user_path %></p>
+          <p class="button_path delete"><%= link_to 'Delete account', @user, :method => 'delete', :data => {:confirm => "Are you sure?"} %></p>
+
           <br>
             <h3>See my items</h3>
               <% @user.items.each do |item| %>
-                <%= link_to cl_image_tag(item.image, :class => 'icon flex card'), item %>
+                <div class="icon flex card">
+                  <%= link_to cl_image_tag(item.image), item %>
+                  <p><%= item.name %></p>
+                  <p><%= number_to_currency (item.price) %></p>
+                  <p><%= item.description %></p>
+                </div>
               <% end %>
               <h4><%= link_to 'Add item', new_item_path %></h4>
                 <% elsif @user != @current_user || @current_user.present? %>
                 <h3>See seller's items</h3>
                   <% @user.items.each do |item| %>
-                    <%= link_to cl_image_tag(item.image, :class => 'icon flex card'), item %>
+                  <div class="icon flex card">
+                    <%= link_to cl_image_tag(item.image), item %>
+                    <p><%= item.name %></p>
+                    <p><%= item.price %></p>
+                    <p><%= item.description %></p>
+                  </div>
           <% end %>
           <br>
       <% end %>

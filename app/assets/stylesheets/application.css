@@ -20,10 +20,6 @@ summary {
 	margin: 0 10px ;
 	width: 23px;
 	height: 17px;
-	background-color: var(--primColor);
-	border: 2px solid var(--secoColor);
-	border-radius: var(--cornerRad);
-	color: var(--secoColor);
 	cursor: pointer;
 	user-select: none;
 	outline: none;
@@ -62,8 +58,6 @@ details[open] summary::after {
 .menu {
 	height: 0;
 	width: fit-content;
-	border-radius: var(--cornerRad);
-	background-color: var(--primColor);
 	box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
 	margin-top: 8px;
 	display: flex;
@@ -75,7 +69,6 @@ details[open] summary::after {
 .menu a {
 	padding: 12px 24px;
 	margin: 0 16px;
-	color: var(--secoColor);
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 	text-decoration: none;
 	text-align: center;
@@ -91,7 +84,6 @@ details[open] summary::after {
 	filter: brightness(200%);
 }
 details::before {
-	color: var(--secoColor);
 	position: absolute;
 	margin-left: 80px;
 	padding: 10px 10px;
@@ -118,9 +110,10 @@ details[open]::before {
 }
 a {
 	text-decoration: none;
+	color: black;
 }
 a:hover {
-	text-decoration: underline
+	cursor: pointer;
 }
 p{
 	font-size: 14px;
@@ -132,6 +125,7 @@ p{
 	margin: 0 auto;
 	padding: 12px;
 	background-color: rgba(255, 255, 255, 0.5);
+	padding-bottom: 10rem;
 }
 
 .container > .pic-ctn {
@@ -139,6 +133,11 @@ p{
 }
 .container > .login {
   height: 60vh;
+}
+
+.login {
+	margin-left: 15rem;
+	margin-right: 15rem;
 }
 .container > .order-form {
   height: 100vh;
@@ -156,7 +155,7 @@ p{
 .flex {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: flex-start;
+	justify-content: center;
 }
 .description {
 	width: 50%;
@@ -165,21 +164,41 @@ p{
 }
 .card{
 	flex-basis: 20%;
-	/* initial percantage */
 	-ms-flex: auto;
 	position: relative;
-	max-width: 500px;
+	width: 20rem;
+	height: 20rem;
 	margin: 5px;
 	padding: 12px;
 	box-sizing: border-box;
 	display: inline-block;
-  box-shadow: 5px 5px 10px 8px rgba(1, 120, 74, 0.5);
+  box-shadow: 5px 10px 8px grey;
+}
+
+.card img {
+	width: 240px;
 }
 .description:last-of-type {
 	box-shadow: 5px 5px 10px 8px rgba(1, 120, 74, 0.5);
 }
 button {
 	background-color: #4CAF50;
+}
+.button_path{
+	margin-top: 20px;
+	display: inline-block;
+	padding: 15px;
+}
+
+.edit:hover{
+	box-sizing: border-box;
+	border: 2px solid  #4CAF50;
+
+}
+.delete:hover{
+	box-sizing: border-box;
+	border: 2px solid red;
+
 }
 .items-icons {
 	padding: 12px;

@@ -15,7 +15,8 @@
                    Shipping: <%= number_to_currency(line_item.item.shipping) %>
                    <% end %>
                <br>
-                  <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
+                  <%= link_to "Remove item", line_item_path(line_item), :class =>
+                  "button_path delete", method: :delete %>
                   </div>
               <br>
             <% end %>
@@ -28,5 +29,5 @@
 <hr>
 
 <h3>Total Price: <%= number_to_currency(@cart.total) %> </h3>
-<%= link_to 'Proceed to check out', new_order_path %>
-<%= link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: "Are you sure?"} %>
+<p class="button_path edit"><%= link_to 'Proceed to check out', new_order_path %></p>
+<p class="button_path delete"><%= link_to 'Empty cart', cart_path(@current_cart), method: :delete, data: {confirm: "Are you sure?"} %></p>

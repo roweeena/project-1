@@ -3,7 +3,11 @@
 
   <% @items.each do |item| %>
     <div class="card">
-      <%= link_to cl_image_tag(item.image, :class => 'thumb'), item if item.image.present? %>
+      <% if item.image.nil? %>
+        <%= link_to image_tag("https://via.placeholder.com/200"), item %>
+      <% else %>
+        <%= link_to cl_image_tag(item.image, :class => 'thumb'), item  %>
+      <% end %>
       <br>
       <%= link_to item.name, item %>
       <br>

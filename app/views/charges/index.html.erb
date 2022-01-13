@@ -1,0 +1,8 @@
+<% if flash[:notice].present? %>
+  <div class="successful">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+
+
+<h2><%= link_to "Continue Shopping", items_path %></h2>

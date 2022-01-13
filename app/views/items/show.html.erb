@@ -12,16 +12,19 @@
           <br>
           <small><%= @user.location %></small>
         <% end %>
-          <h5>Description:</h5>
-            <%= @item.description %>
 
               <h3><%= number_to_currency @item.price %></h3>
 
+              <% if @item.description.nil? %>
+                <h4><%= "The seller did not provide a description" %></h4>
+                <% else %>
+                <h4><em><%= @item.description%><em></h4>
+                <% end%>
+
               <ul>
-                <li>Name: <%= @item.name %></li>
                 <li>Size: <%= @item.size %></li>
-                <li>Style:<%= @item.style %></li>
-                <li>Condition: <%= @item.condition %></li>
+                <li>Style: <em><%= @item.style ? @item.style : "The seller didn't provide the item's style" %></em></li>
+                <li>Condition: <%= @item.condition ? @item.condition : "The seller didn't provide the item's condition"%></li>
                 <li>Color: <%= @item.color %></li>
                 <li>Shipping: <%= @item.shipping > 0 ? number_to_currency(@item.shipping) : "Free" %></li>
               </ul>
@@ -29,22 +32,22 @@
                     <h5><%= link_to 'See reviews for this seller',user_path(@user.id) %></h5>
                   </div>
 
-                <div class="items-icons">
-                    <%= link_to image_tag('/assets/icons8-add-basket-48.png', :width => '30px'), line_items_path(:item_id => @item.id), :method => 'post' %>
-                    </div>
-                <div class="items-icons">
-                  <%= link_to image_tag('/assets/icons8-mail-48.png', :width => '30px') %>
-                </div>
+                  <div class="items-icons">
+                      <%= link_to image_tag('/assets/icons8-add-basket-48.png', :width => '30px'), line_items_path(:item_id => @item.id), :method => 'post' %>
+                      </div>
+                  <div class="items-icons">
+                    <%= link_to image_tag('/assets/icons8-mail-48.png', :width => '30px') %>
+                  </div>
 
-                <div class="items-icons">
-                  <%= link_to image_tag('/assets/icons8-heart-48.png', :width => '30px') %>
-                </div>
+                  <div class="items-icons">
+                    <%= link_to image_tag('/assets/icons8-heart-48.png', :width => '30px') %>
+                  </div>
+
                     <br>
                 <% if @user == @current_user%>
-                  <div class="editor">
-                    <%= link_to 'Edit Item', edit_item_path(@item) %>
-                    <%= link_to 'Delete Item', @item, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
-                  </div>
+              
+                    <p class="button_path edit"><%= link_to 'Edit Item', edit_item_path(@item) %></p>
+                    <p class="button_path delete"><%= link_to 'Delete Item', @item, :method => 'delete', :data => {:confirm => "Are you sure?"} %>
                 <% end %>
         </div>
   </div>
